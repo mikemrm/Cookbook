@@ -1,1 +1,1 @@
-# [Javascript Wiki](https://github.com/mikemrm/Cookbook/wiki#javascript)
+*[Javascript Wiki](https://github.com/mikemrm/Cookbook/wiki#javascript)*
