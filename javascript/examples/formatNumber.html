@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" src="../formatNumber.js"></script>
+	</head>
+	<body>
+		<select id="format_list">
+			<option>(###) ###-####</option>
+			<option>###-###-####</option>
+			<option>+# (###) ###-####</option>
+			<option>(## ##) #### ####</option>
+			<option>(##) ## #### ####</option>
+			<option>(##) #### ####</option>
+			<option>(###) ### ### ####</option>
+			<option>(###) ### ### ## ##</option>
+			<option>##### ######</option>
+			<option>##### ######-##</option>
+			<option>+## #### ######</option>
+			<option>####/######-##</option>
+			<option>+# (###) ###-##-##</option>
+		</select>
+		<input type="text" id="number_format" maxlength="14" /><br />
+		<script>
+			var input_number = document.getElementById('number_format');
+			var format_list = document.getElementById('format_list');
+
+			var format_number = format_list.value;
+			format_list.addEventListener("change", function(){
+				format_number = this.value;
+				input_number.maxLength = this.value.length;
+				input_number.value = formatNumber(input_number.value, format_number);
+			});
+			input_number.addEventListener("keyup", function(){
+				this.value = formatNumber(this.value, format_number);
+			});
+			input_number.value = formatNumber('5556765263', format_number);
+		</script>
+	</body>
+</html>
