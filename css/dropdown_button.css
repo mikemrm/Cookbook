@@ -1,0 +1,139 @@
+/*
+	Style: dd_btn
+
+		CSS based button drop down menu.
+
+	Additional Classes:
+
+		.dd_btn.btn_center	- Center aligns the submenu below the button
+		.dd_btn.btn_right	- Right aligns the submenu below the button
+
+	Usage:
+
+		> <div class="dd_btn">
+		>	<div>View</div>
+		>	<div>
+		>		<div></div>
+		>		<div>
+		>			<a href="#">Detailed</a>
+		>			<a href="#">List</a>
+		>			<a href="#">Small Icons</a>
+		>			<a href="#">Medium Icons</a>
+		>			<a href="#">Large Icons</a>
+		>		</div>
+		>	</div>
+		> </div>
+	
+	Wiki:
+
+		<https://github.com/mikemrm/Cookbook/wiki/dropdown_button_css>
+*/
+.dd_btn {
+	position: relative;
+	display: inline-block;
+	margin: 5px;
+	font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	cursor: pointer;
+}
+.dd_btn > div:first-child {
+	color:			white;
+	padding:		10px 20px;
+	border-color:		rgb(255, 255, 255);
+	background:		rgb(216, 0, 0) url('examples/images/dropdown_button_gradient.png') repeat-x;
+	-moz-box-shadow:	0   1px 3px rgba(0,0,0,0.6);
+	-webkit-box-shadow:	0   1px 3px rgba(0,0,0,0.6);
+	box-shadow:		0   1px 3px rgba(0,0,0,0.6);
+	text-shadow:		1px 1px 1px rgba(0,0,0,0.6);
+	border-bottom:		1px solid rgb(255, 255, 255);
+	position:		relative;
+	cursor:			pointer;
+	-webkit-transition:	background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	-moz-transition:	background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	-ms-transition:		background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	-o-transition:		background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	transition:		background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.dd_btn:hover > div:first-child {
+	background-color: rgb(230, 0, 0);
+}
+
+.dd_btn > div:last-child {
+	position: absolute;
+	top: 105%;
+	border: solid 0 green;
+	min-width: 100%;
+	max-height: 0;
+	opacity: 0;
+	white-space: nowrap;
+	z-index:100;
+	overflow: hidden;
+	-webkit-transition:	opacity 0.1s ease-in-out, max-height 0s linear 0.1s, top 0.1s ease-in-out;
+	-moz-transition:	opacity 0.1s ease-in-out, max-height 0s linear 0.1s, top 0.1s ease-in-out;
+	-ms-transition:		opacity 0.1s ease-in-out, max-height 0s linear 0.1s, top 0.1s ease-in-out;
+	-o-transition:		opacity 0.1s ease-in-out, max-height 0s linear 0.1s, top 0.1s ease-in-out;
+	transition:		opacity 0.1s ease-in-out, max-height 0s linear 0.1s, top 0.1s ease-in-out;
+}
+.dd_btn:hover > div:last-child, .dd_btn.dd_open > div:last-child {
+	max-height: 500px;
+	top: 100%;
+	opacity: 1;
+	overflow: visible;
+	-webkit-transition:	opacity 0.1s ease-in-out 0.1s, max-height 0s linear, top 0.1s ease-in-out 0.1s;
+	-moz-transition:	opacity 0.1s ease-in-out 0.1s, max-height 0s linear, top 0.1s ease-in-out 0.1s;
+	-ms-transition:		opacity 0.1s ease-in-out 0.1s, max-height 0s linear, top 0.1s ease-in-out 0.1s;
+	-o-transition:		opacity 0.1s ease-in-out 0.1s, max-height 0s linear, top 0.1s ease-in-out 0.1s;
+	transition:		opacity 0.1s ease-in-out 0.1s, max-height 0s linear, top 0.1s ease-in-out 0.1s;
+}
+
+
+.dd_btn.btn_right > div:last-child {
+	right: 0;
+}
+
+.dd_btn > div:last-child > div:first-child {
+	height: 1px;
+	background-repeat: no-repeat;
+}
+.dd_btn > div:last-child > div:first-child {
+	background-position: 20% center;
+}
+.dd_btn.btn_center > div:last-child > div:first-child {
+	background-position: center center;
+}
+.dd_btn.btn_right > div:last-child > div:first-child {
+	background-position: 80% center;
+}
+.dd_btn > div:last-child > div:last-child {
+	border: solid 1px rgb(208, 208, 208);
+	background-color: rgb(255, 255, 255);
+	border-radius: 3px;
+}
+
+.dd_btn > div:last-child a {
+	display: block;
+	padding: 5px 10px;
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+	-webkit-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	-moz-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	-ms-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	-o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+	transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.dd_btn > div:last-child a:first-child {
+	border-radius: 3px 3px 0px 0px;
+}
+.dd_btn > div:last-child a:last-child {
+	border-radius: 0px 0px 3px 3px;
+}
+.dd_btn > div:last-child a:hover {
+	background-color: rgb(229, 229, 229);
+}
+
+.dd_btn.btn_center > div:last-child {
+	left: 50%;
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	transform: translate(-50%, 0);
+}
