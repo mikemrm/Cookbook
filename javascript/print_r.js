@@ -22,7 +22,34 @@
 	@licend  The above is the entire license notice
 	for the JavaScript code in this page.
 */
+/*
+	Function: print_r
 
+		Takes a javascript object and makes a string representation of it, similar to print_r in PHP.
+
+	Parameters:
+
+		Object		- Array / Object
+		HTML Safe	- If true, replaces < and > with &lt; and &gt;
+		Max Depth	- Recursion max depth
+
+	Usage:
+
+		*Input*
+
+		> print_r({'key': 'value'});
+
+		*Output*
+
+		> Array
+		> (
+		>     [key] => value
+		> )
+	
+	Wiki:
+
+		<https://github.com/mikemrm/Cookbook/wiki/print_r_js>
+*/
 function print_r(val, fix, maxDepth){
 	var types = {};
 	var html = "";

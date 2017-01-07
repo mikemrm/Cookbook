@@ -1,3 +1,26 @@
+/*
+	Function: ato2
+
+		Translates letters to their corresponding number on a phone.
+
+	Parameters:
+
+		text	- String to be converted
+
+	Usage:
+
+		*Input*
+
+		> ato2("(123) MRM-LAND");
+
+		*Output*
+
+		> (123) 676-5263
+	
+	Wiki:
+
+		<https://github.com/mikemrm/Cookbook/wiki/ato2_js>
+*/
 function ato2(text){
 	var conv = [
 		{'reg': /^[abc]$/ig,	'digit': 2},
