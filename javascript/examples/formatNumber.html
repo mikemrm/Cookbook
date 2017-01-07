@@ -19,7 +19,7 @@
 			<option>####/######-##</option>
 			<option>+# (###) ###-##-##</option>
 		</select>
-		<input type="text" id="number_format" maxlength="14" /><br />
+		<input type="text" id="number_format" /><br />
 		<script>
 			var input_number = document.getElementById('number_format');
 			var format_list = document.getElementById('format_list');
@@ -33,6 +33,7 @@
 			input_number.addEventListener("keyup", function(){
 				this.value = formatNumber(this.value, format_number);
 			});
+			input_number.maxLength = format_number.length;
 			input_number.value = formatNumber('5556765263', format_number);
 		</script>
 	</body>
