@@ -13,14 +13,11 @@
 		> <div class="dd_btn">
 		>	<div>View</div>
 		>	<div>
-		>		<div></div>
-		>		<div>
-		>			<a href="#">Detailed</a>
-		>			<a href="#">List</a>
-		>			<a href="#">Small Icons</a>
-		>			<a href="#">Medium Icons</a>
-		>			<a href="#">Large Icons</a>
-		>		</div>
+		>		<a href="#">Detailed</a>
+		>		<a href="#">List</a>
+		>		<a href="#">Small Icons</a>
+		>		<a href="#">Medium Icons</a>
+		>		<a href="#">Large Icons</a>
 		>	</div>
 		> </div>
 	
@@ -91,20 +88,16 @@
 	right: 0;
 }
 
-.dd_btn > div:last-child > div:first-child {
-	height: 1px;
-	background-repeat: no-repeat;
-}
-.dd_btn > div:last-child > div:first-child {
+.dd_btn > div:last-child {
 	background-position: 20% center;
 }
-.dd_btn.btn_center > div:last-child > div:first-child {
+.dd_btn.btn_center > div:last-child {
 	background-position: center center;
 }
-.dd_btn.btn_right > div:last-child > div:first-child {
+.dd_btn.btn_right > div:last-child {
 	background-position: 80% center;
 }
-.dd_btn > div:last-child > div:last-child {
+.dd_btn > div:last-child {
 	border: solid 1px rgb(208, 208, 208);
 	background-color: rgb(255, 255, 255);
 	border-radius: 3px;
