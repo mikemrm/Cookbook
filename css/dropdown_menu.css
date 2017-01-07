@@ -1,0 +1,132 @@
+/*
+	Style: nav
+
+		Used to build a navigation menu with support for sub-menus.
+
+	Additional Classes:
+
+		.nav > div > .sub		- Indicating the specified element is a sub menu.
+		.nav > div > a.selected	- Highlights a used link
+
+	Usage:
+
+		> <div class="nav" style="min-width: 150px; display:inline-block;">
+		>	<div>
+		>		<a href="#">Level 1 Link</a>
+		>	</div>
+		>	<div>
+		>		<a href="#" class="selected">Level 1 Selected Link</a>
+		>		<div>
+		>			<a href="#">Level 2 Link</a>
+		>			<div class="nav sub">
+		>				<div>
+		>					<a href="#" class="selected">Level 2 Selected Link</a>
+		>					<div class="nav sub">
+		>						<a href="#">Level 3 Link
+		>						<a href="#" class="selected">Level 3 Selected Link</a>
+		>					</div>
+		>				</div>
+		>			</div>
+		>		</div>
+		>	</div>
+		> </div>
+	
+	Wiki:
+
+		<https://github.com/mikemrm/Cookbook/wiki/dropdown_menu_css>
+*/
+
+.nav {
+	background-color:rgb(30, 30, 30);
+}
+.nav:not(.sub){
+	border-right: solid 1px rgb(200, 200, 200);
+}
+
+.nav > div {
+	position: relative;
+}
+
+.nav > div > a {
+	display: block;
+	padding: 5px;
+	border-style: solid;
+	border-width: 1px 0px 1px 5px;
+	border-color: rgba(34, 152, 205, 0);
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	white-space: nowrap;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+	-webkit-transition:	color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	-moz-transition:		color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	-ms-transition:			color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	-o-transition:				color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	transition:				color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	z-index:1;
+}
+.nav > div > a.selected {
+	border-color: rgba(34, 152, 205, 0.5);
+	background-color: rgba(42, 88, 167, 1);
+	color: rgb(255, 255, 255);
+}
+.nav > div:hover > a {
+	border-color: rgba(34, 152, 205, 1);
+	background-color: rgba(42, 88, 167, 1);
+	color: rgb(255, 255, 255);
+}
+.nav > div > div {
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	left: 85%;
+	opacity:0;
+	max-width: 0px;
+	max-height: 0px;
+	overflow:hidden;
+	border-style: solid;
+	border-width: 1px 0px 1px 5px;
+	border-color: rgb(34, 152, 205);
+	background-color:rgb(30, 30, 30);
+	color: rgb(255, 255, 255);
+	-webkit-transition:	opacity 0.1s ease-in-out, left 0.1s ease-in-out, max-height 0s linear 0.1s, max-width 0s linear 0.1s;
+	-moz-transition:		opacity 0.1s ease-in-out, left 0.1s ease-in-out, max-height 0s linear 0.1s, max-width 0s linear 0.1s;
+	-ms-transition:			opacity 0.1s ease-in-out, left 0.1s ease-in-out, max-height 0s linear 0.1s, max-width 0s linear 0.1s;
+	-o-transition:				opacity 0.1s ease-in-out, left 0.1s ease-in-out, max-height 0s linear 0.1s, max-width 0s linear 0.1s;
+	transition:				opacity 0.1s ease-in-out, left 0.1s ease-in-out, max-height 0s linear 0.1s, max-width 0s linear 0.1s;
+	z-index:2;
+}
+.nav > div:hover > div {
+	opacity:1;
+	left: 97%;
+	max-width: 200px;
+	max-height: 500px;
+	overflow:visible;
+	-webkit-transition:	opacity 0.1s ease-in-out 0.1s, left 0.1s ease-in-out 0.1s, max-height 0s linear;
+	-moz-transition:		opacity 0.1s ease-in-out 0.1s, left 0.1s ease-in-out 0.1s, max-height 0s linear;
+	-ms-transition:			opacity 0.1s ease-in-out 0.1s, left 0.1s ease-in-out 0.1s, max-height 0s linear;
+	-o-transition:				opacity 0.1s ease-in-out 0.1s, left 0.1s ease-in-out 0.1s, max-height 0s linear;
+	transition:				opacity 0.1s ease-in-out 0.1s, left 0.1s ease-in-out 0.1s, max-height 0s linear;
+}
+
+.nav > div > div > a, .nav > div > div > div > a {
+	display: block;
+	padding: 5px;
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	-webkit-transition:	color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	-moz-transition:		color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	-ms-transition:			color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	-o-transition:				color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	transition:				color 0.1s ease-in-out, border 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	white-space: nowrap;
+}
+.nav > div > div > a.selected {
+	background-color: rgb(42, 88, 167);
+}
+.nav > div > div > a:hover {
+	background-color: rgb(34, 152, 205);
+}
