@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Javascript Alphabet to Digits (T9)</title>
+		<script type="text/javascript" src="ato2.js?raw=true"></script>
+		<script>
+			var itext = null;
+			var otext = null;
+			
+			function ichange(){
+				otext.value = ato2(this.value);
+			}
+			
+			window.addEventListener('load', function(){
+				itext = document.getElementById('itext');
+				otext = document.getElementById('otext');
+				itext.addEventListener('keyup', ichange);
+			});
+		</script>
+	</head>
+	<body>
+		Enter Text: <input type="text" id="itext" /><br />
+		Results: <input type="text" disabled="disabled" id="otext" />
+	</body>
+</html>
